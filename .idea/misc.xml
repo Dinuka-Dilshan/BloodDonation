@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_donors.xml" value="0.18541666666666667" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_landing.xml" value="0.19947916666666668" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_sign_in.xml" value="0.17777777777777778" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_sign_in_form.xml" value="0.17777777777777778" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/app_bar_landing.xml" value="0.19947916666666668" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/content_landing.xml" value="0.19947916666666668" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/fragment_home.xml" value="0.19947916666666668" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.19947916666666668" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/nav_header_landing.xml" value="0.19947916666666668" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/single_item.xml" value="0.1984375" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_sign_in_form.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
