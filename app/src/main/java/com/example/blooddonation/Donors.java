@@ -10,7 +10,7 @@ public class Donors extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     CustomAdapter adapter;
-    String [] array = {"sdfdsfds","dsfds"};
+    String [] array = {"sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds","sdfdsfds","dsfds"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
