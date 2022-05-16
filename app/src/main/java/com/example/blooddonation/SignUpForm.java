@@ -17,6 +17,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.regex.Pattern;
+
 public class SignUpForm extends AppCompatActivity {
 
     private EditText name;
@@ -54,12 +56,12 @@ public class SignUpForm extends AppCompatActivity {
 
             if (getStringValue(name).length() == 0) {
                 Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
-            } else if (phone.getText().toString().trim().length() == 0) {
-                Toast.makeText(this, "Phone number cannot be empty", Toast.LENGTH_SHORT).show();
+            } else if (phone.getText().toString().trim().length() != 10  ) {
+                Toast.makeText(this, "Phone number is invalid", Toast.LENGTH_SHORT).show();
             } else if (getStringValue(address).length() == 0) {
                 Toast.makeText(this, "Address number cannot be empty", Toast.LENGTH_SHORT).show();
             } else if (getStringValue(bloodGroup).length() == 0) {
-                Toast.makeText(this, "Blood Group cannot be empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Blood Group is Invalid", Toast.LENGTH_SHORT).show();
             } else if (getStringValue(userName).length() == 0) {
                 Toast.makeText(this, "User Name cannot be empty", Toast.LENGTH_SHORT).show();
             } else if (getStringValue(password).length() == 0) {
@@ -74,7 +76,7 @@ public class SignUpForm extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.getChildrenCount()>0){
-                            Toast.makeText(SignUpForm.this, "Username available", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpForm.this, "Username is not available", Toast.LENGTH_SHORT).show();
                         }else{
                             DAO.register(user).addOnSuccessListener(suc->{
                                 Toast.makeText(getApplicationContext(),"Registered ! Sign In to login",Toast.LENGTH_LONG).show();
@@ -87,7 +89,7 @@ public class SignUpForm extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        Toast.makeText(SignUpForm.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -102,6 +104,8 @@ public class SignUpForm extends AppCompatActivity {
     private String getStringValue(EditText txt) {
         return txt.getText().toString().trim();
     }
+
+
 
 
 }
