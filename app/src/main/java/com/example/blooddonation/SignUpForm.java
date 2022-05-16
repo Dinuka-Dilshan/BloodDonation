@@ -50,6 +50,9 @@ public class SignUpForm extends AppCompatActivity {
         signUp = findViewById(R.id.btnRegister);
         goBack = findViewById(R.id.txtGoback);
 
+
+
+
         DAOUser DAO = new DAOUser();
 
         signUp.setOnClickListener(v -> {
@@ -71,7 +74,14 @@ public class SignUpForm extends AppCompatActivity {
             } else if (!getStringValue(confirmPassword).equals(getStringValue(password))) {
                 Toast.makeText(this, "Password does not match", Toast.LENGTH_SHORT).show();
             } else {
-                User user = new User(getStringValue(name), Integer.parseInt(phone.getText().toString()), getStringValue(address), getStringValue(bloodGroup), getStringValue(userName), getStringValue(password), "user");
+
+
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+
+                radioButton = (RadioButton) findViewById(selectedId);
+
+                User user = new User(getStringValue(name), Integer.parseInt(phone.getText().toString()), getStringValue(address), getStringValue(bloodGroup), getStringValue(userName), getStringValue(password), radioButton.getText().toString().trim());
                 DAO.checkAvailableUser(getStringValue(userName)).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
