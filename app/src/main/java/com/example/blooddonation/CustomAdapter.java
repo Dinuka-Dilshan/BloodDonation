@@ -3,17 +3,21 @@ package com.example.blooddonation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder>  {
 
-    private String[] mDataSet;
+    private List<User> userList;
 
-    public CustomAdapter(String[] mDataSet) {
-        this.mDataSet = mDataSet;
+    public CustomAdapter(List<User> userList) {
+        this.userList = userList;
     }
 
     @NonNull
@@ -25,16 +29,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder viewHolder, int position) {
-        viewHolder.getTextView().setText(mDataSet[position]);
+        viewHolder.getNames().setText(userList.get(position).getName());
+        viewHolder.getAddress().setText(userList.get(position).getAddress());
+        viewHolder.getBlood_group().setText(userList.get(position).getBloodGroup());
+        viewHolder.getImage().setImageResource(R.drawable.index);
+        viewHolder.getContact_no().setText(Integer.toString(userList.get(position).getPhoneNumber()));
     }
 
     @Override
     public int getItemCount() {
-        return mDataSet.length;
+        return userList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
+        private final ImageView image;
+        private final TextView name;
+        private final TextView contact_no;
+        private final TextView address;
+        private final TextView blood_group;
 
         public ViewHolder(View v) {
             super(v);
@@ -45,11 +57,31 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     //
                 }
             });
-            textView = (TextView) v.findViewById(R.id.textView3);
+            image = (ImageView) v.findViewById(R.id.recycle_image);
+            name = (TextView) v.findViewById(R.id.recycle_name);
+            contact_no = (TextView) v.findViewById(R.id.recycle_contact_no);
+            address = (TextView) v.findViewById(R.id.recycle_address);
+            blood_group = (TextView) v.findViewById(R.id.recycle_blood_group);
         }
 
-        public TextView getTextView() {
-            return textView;
+        public ImageView getImage() {
+            return image;
+        }
+
+        public TextView getNames() {
+            return name;
+        }
+
+        public TextView getContact_no() {
+            return contact_no;
+        }
+
+        public TextView getAddress() {
+            return address;
+        }
+
+        public TextView getBlood_group() {
+            return blood_group;
         }
     }
 }
