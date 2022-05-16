@@ -44,7 +44,9 @@ public class SignIn extends AppCompatActivity {
                     }
 
                     if(isValid){
-                        Toast.makeText(SignIn.this, "Valid", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(),MyProfile.class);
+                        i.putExtra("userName",getStringValue(userName));
+                        startActivity(i);
                     }else {
                         Toast.makeText(SignIn.this, "Username or password incorrect !", Toast.LENGTH_SHORT).show();
                     }
