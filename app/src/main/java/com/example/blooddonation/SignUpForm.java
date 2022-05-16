@@ -109,6 +109,10 @@ public class SignUpForm extends AppCompatActivity {
 
         });
 
+        goBack.setOnClickListener(v->{
+            startActivity(new Intent(getApplicationContext(),SignIn.class));
+        });
+
     }
 
     private String getStringValue(EditText txt) {
