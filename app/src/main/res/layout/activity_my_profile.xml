@@ -18,19 +18,27 @@
             android:id="@+id/my_prifile_topic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="My Profile"
-            android:textSize="30dp"
-            android:textAlignment="center"
             android:layout_marginTop="50dp"
-            />
+            android:text="My Profile"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30dp" />
 
-        <ImageView
-            android:id="@+id/my_prifile_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_below="@+id/my_prifile_topic"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/index"/>
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="50dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:cardCornerRadius="250dp"
+            android:elevation="10dp">
+            <ImageView
+                android:id="@+id/my_prifile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_below="@+id/my_prifile_topic"
+                android:src="@drawable/user"/>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,56 +55,72 @@
             android:paddingStart="25dp"
             android:gravity="center"
             >
+
+            <TextView
+                android:id="@+id/my_prifile_user_name_txt"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="30dp"
+                android:text="User Name"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/my_prifile_name_label"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Name"
-                android:textSize="15dp"
-                android:paddingLeft="30dp"
-                android:textAlignment="textStart"
                 android:layout_marginTop="10dp"
-                />
+                android:paddingLeft="30dp"
+                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/my_prifile_name_contact_label"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Contact No"
-                android:textSize="15dp"
-                android:paddingLeft="30dp"
-                android:textAlignment="textStart"
                 android:layout_marginTop="10dp"
-                />
+                android:paddingLeft="30dp"
+                android:text="Contact No"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/my_prifile_address_label"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Address"
-                android:textSize="15dp"
-                android:paddingLeft="30dp"
-                android:textAlignment="textStart"
                 android:layout_marginTop="10dp"
-                />
+                android:paddingLeft="30dp"
+                android:text="Address"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/my_prifile_district_label"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Living District"
-                android:textSize="15dp"
-                android:paddingLeft="30dp"
-                android:textAlignment="textStart"
                 android:layout_marginTop="10dp"
-                />
+                android:paddingLeft="30dp"
+                android:text="Living District"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/my_prifile_group_label"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Bllod Group"
-                android:textSize="15dp"
-                android:paddingLeft="30dp"
-                android:textAlignment="textStart"
                 android:layout_marginTop="10dp"
-                />
+                android:paddingLeft="30dp"
+                android:text="Bllod Group"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp" />
 
 
         </LinearLayout>
@@ -109,6 +133,20 @@
             android:orientation="vertical"
             android:gravity="center"
             >
+
+            <TextView
+                android:id="@+id/my_profile_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="none"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#8E8C8C"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/my_profile_name"
@@ -130,11 +168,13 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:ems="10"
+                android:inputType="phone"
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textColorHint="#8E8C8C"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
             <EditText
                 android:id="@+id/my_profile_address"
                 android:layout_width="match_parent"
@@ -160,7 +200,9 @@
                 android:textColorHint="#8E8C8C"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
             <EditText
+
                 android:id="@+id/my_profile_blood_group"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
@@ -183,12 +225,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/info_section"
         android:gravity="center">
+
         <Button
             android:id="@+id/button"
             android:layout_width="200dp"
             android:layout_height="60dp"
+            android:background="#46AEE9"
             android:text="Update"
-            />
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:backgroundTint="#46AEE9"
+            app:cornerRadius="30sp" />
     </LinearLayout>
 
 

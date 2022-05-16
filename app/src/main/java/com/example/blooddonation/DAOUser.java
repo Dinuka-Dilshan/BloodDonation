@@ -33,5 +33,8 @@ public class DAOUser {
     }
 
 
+    public DatabaseReference getRef(){
+        return  databaseReference;
+    }
 
 }
