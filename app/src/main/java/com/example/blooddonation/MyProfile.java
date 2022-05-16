@@ -4,23 +4,23 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import java.io.File;
 
 public class MyProfile extends AppCompatActivity {
 
@@ -32,6 +32,9 @@ public class MyProfile extends AppCompatActivity {
     EditText bloodGroup;
     StorageReference storageRef;
     ImageView img;
+    TextView userNameEditText;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class MyProfile extends AppCompatActivity {
         address = findViewById(R.id.my_profile_address);
         district = findViewById(R.id.my_profile_district);
         bloodGroup = findViewById(R.id.my_profile_blood_group);
+        userNameEditText = findViewById(R.id.my_profile_user_name);
         img = findViewById(R.id.my_prifile_image);
 
         Intent i = getIntent();
@@ -77,6 +81,8 @@ public class MyProfile extends AppCompatActivity {
                     phone.setText(ds.child("phoneNumber").getValue().toString());
                     address.setText(ds.child("address").getValue().toString());
                     bloodGroup.setText(ds.child("bloodGroup").getValue().toString());
+                    userNameEditText.setText(ds.child("userName").getValue().toString());
+
                 }
 
             }
@@ -85,6 +91,36 @@ public class MyProfile extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
+        });
+
+
+        btn.setOnClickListener(v->{
+
+
+
+            DatabaseReference ref = new DAOUser().getRef();
+            Query pendingTasks = ref.orderByChild("userName").equalTo((userNameEditText.getText().toString().trim()));
+            pendingTasks.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot childNodes: snapshot.getChildren()) {
+                        childNodes.getRef().child("name").setValue(getStringValue(name));
+                        childNodes.getRef().child("phoneNumber").setValue(getStringValue(phone));
+                        childNodes.getRef().child("address").setValue(getStringValue(address));
+                        childNodes.getRef().child("bloodGroup").setValue(getStringValue(bloodGroup));
+                    }
+                    Toast.makeText(MyProfile.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
         });
 
     }
