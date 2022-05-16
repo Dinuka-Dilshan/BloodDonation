@@ -10,6 +10,12 @@
         android:theme="@style/Theme.BloodDonation"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".BloodInfo"
+            android:exported="false" />
+        <activity
             android:name=".Organizations"
             android:exported="false" />
         <activity

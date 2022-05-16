@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_blood_info.xml" value="0.20416666666666666" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_donors.xml" value="0.18541666666666667" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_landing.xml" value="0.19947916666666668" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_my_profile.xml" value="0.1609375" />

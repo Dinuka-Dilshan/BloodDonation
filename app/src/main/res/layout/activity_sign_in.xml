@@ -60,19 +60,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIGN IN"
-        android:backgroundTint="@color/primary"
-        android:paddingHorizontal="60dp"
-        android:paddingVertical="20dp"
         android:layout_below="@+id/textPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:textSize="20dp"
-        app:cornerRadius="50dp"
+        android:backgroundTint="@color/primary"
+        android:paddingHorizontal="60dp"
+        android:paddingVertical="20dp"
+        android:text="SIGN IN"
         android:textColor="@color/white"
-        android:id="@+id/btnSignUp"
-        />
+        android:textSize="20dp"
+        app:cornerRadius="50dp" />
 
 </RelativeLayout>
