@@ -130,6 +130,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:ems="10"
+                android:inputType="phone"
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textColorHint="#8E8C8C"
@@ -161,6 +162,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
             <EditText
+
                 android:id="@+id/my_profile_blood_group"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
