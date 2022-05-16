@@ -26,6 +26,13 @@ public class DAOUser {
 
     }
 
+    public Query getAllDonors() {
+
+        return databaseReference.orderByChild("category");
+
+    }
+
+
     public DatabaseReference getRef(){
         return  databaseReference;
     }
