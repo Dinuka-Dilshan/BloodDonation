@@ -37,8 +37,8 @@ public class Donors extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()) {
-                    User emp = data.getValue(User.class);
-                    users.add(emp);
+                    User user = data.getValue(User.class);
+                    users.add(user);
                 }
                 adapter = new CustomAdapter(users);
                 recyclerView.setAdapter(adapter);
