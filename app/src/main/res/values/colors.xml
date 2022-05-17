@@ -5,4 +5,7 @@
     <color name="black">#000000</color>
     <color name="primary">#46AEE9</color>
     <color name="white">#FFFFFF</color>
+    <color name="card_color">#F1F7F8</color>
+    <color name="text_light">#7A7878</color>
+    <color name="text_link">#0047FF</color>
 </resources>
