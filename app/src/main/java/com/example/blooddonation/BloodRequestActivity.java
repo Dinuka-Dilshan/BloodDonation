@@ -42,7 +42,7 @@ public class BloodRequestActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dc2ed-default-rtdb.asia-southeast1.firebasedatabase.app");
         DatabaseReference databaseReference = db.getReference("BloodRequest");
 
-        databaseReference.orderByChild("description").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()) {
@@ -67,4 +67,6 @@ public class BloodRequestActivity extends AppCompatActivity {
         });
 
     }
+
+
 }
