@@ -157,6 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="Update"
+                    android:id="@+id/org_update"
                     app:cornerRadius="0dp"
                     android:textSize="20dp"
                     android:textColor="@color/white"
