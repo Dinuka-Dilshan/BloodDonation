@@ -25,5 +25,5 @@
         android:layout_width="410dp"
         android:layout_height="631dp"
         android:layout_below="@id/title_donor"
-        android:layout_marginHorizontal="15dp"/>
+        android:layout_marginHorizontal="15dp" />
 </RelativeLayout>
