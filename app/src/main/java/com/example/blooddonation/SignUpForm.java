@@ -107,7 +107,7 @@ public class SignUpForm extends AppCompatActivity {
 
                 radioButton = (RadioButton) findViewById(selectedId);
 
-                User user = new User(getStringValue(name), Integer.parseInt(phone.getText().toString()), getStringValue(address), getStringValue(bloodGroup), getStringValue(userName), getStringValue(password), radioButton.getText().toString().trim());
+                User user = new User(getStringValue(name), phone.getText().toString(), getStringValue(address), getStringValue(bloodGroup), getStringValue(userName), getStringValue(password), radioButton.getText().toString().trim());
                 DAO.checkAvailableUser(getStringValue(userName)).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
