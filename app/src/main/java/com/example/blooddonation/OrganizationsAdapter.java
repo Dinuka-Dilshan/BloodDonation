@@ -1,5 +1,6 @@
 package com.example.blooddonation;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -46,6 +47,8 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
         holder.getName().setText(organizers.get(position).getName());
         holder.getTime().setText(organizers.get(position).getTime());
         holder.setId(organizers.get(position).getId());
+        holder.setLatitude(organizers.get(position).getLatitude());
+        holder.setLongitude(organizers.get(position).getLongitude());
     }
 
 
@@ -57,8 +60,18 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView time;
+        private String latitude;
+        private  String  Longitude;
 
         private String id;
+
+        public void setLatitude(String latitude) {
+            this.latitude = latitude;
+        }
+
+        public void setLongitude(String longitude) {
+            Longitude = longitude;
+        }
 
         public ViewHolder(View v) {
             super(v);
@@ -70,6 +83,16 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
                     OrganizationsAdapter.time.setText(getTime().getText().toString());
                     OrganizationsAdapter.venue.setText("Select location");
                     Organizations.updateId = id;
+                }
+            });
+
+            v.findViewById(R.id.org_venue).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(),ViewMapLocations.class);
+                    i.putExtra("latitude",latitude);
+                    i.putExtra("longitude",Longitude);
+                    v.getContext().startActivity(i);
                 }
             });
 
