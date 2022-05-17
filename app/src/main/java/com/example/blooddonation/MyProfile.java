@@ -72,7 +72,6 @@ public class MyProfile extends AppCompatActivity {
         DAOUser db = new DAOUser();
         db.checkAvailableUser(userName).addListenerForSingleValueEvent(new ValueEventListener() {
 
-
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -95,8 +94,6 @@ public class MyProfile extends AppCompatActivity {
 
 
         btn.setOnClickListener(v->{
-
-
 
             DatabaseReference ref = new DAOUser().getRef();
             Query pendingTasks = ref.orderByChild("userName").equalTo((userNameEditText.getText().toString().trim()));
