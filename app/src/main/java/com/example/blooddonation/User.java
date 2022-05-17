@@ -1,8 +1,10 @@
 package com.example.blooddonation;
 
+import android.graphics.Bitmap;
+
 public class User {
     private String name;
-    private int phoneNumber;
+    private String phoneNumber;
     private String address;
     private String bloodGroup;
     private String userName;
@@ -12,7 +14,7 @@ public class User {
     public User() {
     }
 
-    public User(String name, int phoneNumber, String address, String bloodGroup, String userName, String password, String category) {
+    public User(String name, String phoneNumber, String address, String bloodGroup, String userName, String password, String category) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -30,11 +32,11 @@ public class User {
         this.name = name;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

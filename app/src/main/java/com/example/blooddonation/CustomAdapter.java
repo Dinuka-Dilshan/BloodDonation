@@ -1,5 +1,7 @@
 package com.example.blooddonation;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+
 import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder>  {
@@ -32,8 +39,26 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getNames().setText(userList.get(position).getName());
         viewHolder.getAddress().setText(userList.get(position).getAddress());
         viewHolder.getBlood_group().setText(userList.get(position).getBloodGroup());
-        viewHolder.getImage().setImageResource(R.drawable.index);
-        viewHolder.getContact_no().setText(Integer.toString(userList.get(position).getPhoneNumber()));
+        // we will get the default FirebaseDatabase instance
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+
+        StorageReference imageRef = storageRef.child("images/"+(userList.get(position).getUserName()));
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+        imageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                // Data for "images/island.jpg" is returns, use this as needed
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                viewHolder.getImage().setImageBitmap(bitmap);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
+        viewHolder.getContact_no().setText(userList.get(position).getPhoneNumber());
     }
 
     @Override
