@@ -5,10 +5,14 @@ public class Organizer {
     private String venue;
     private String time;
 
-    public Organizer(String name, String venue, String time) {
+    public Organizer(String name,  String time,String venue) {
         this.name = name;
         this.venue = venue;
         this.time = time;
+    }
+
+    public Organizer(){
+
     }
 
     public String getName() {

@@ -19,9 +19,9 @@ public class DAOOrganizer {
         return databaseReference.push().setValue(org);
     }
 
-    public Query getAllOrganizers() {
+    public DatabaseReference getAllOrganizers() {
 
-        return databaseReference.orderByChild("");
+        return databaseReference;
 
     }
 

@@ -40,8 +40,8 @@ public class Organizations extends AppCompatActivity {
         OrganizationsAdapter.venue = venue;
         OrganizationsAdapter.time = time;
 
-        DAOOrganizer DAO = new DAOOrganizer();
-        DAO.getAllOrganizers().addListenerForSingleValueEvent(new ValueEventListener() {
+        DAOOrganizer DAOOrg = new DAOOrganizer();
+        DAOOrg.getAllOrganizers().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()) {
