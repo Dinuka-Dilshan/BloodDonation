@@ -2,7 +2,8 @@ package com.example.blooddonation;
 
 public class Organizer {
     private String name;
-    private String venue;
+    private String latitude;
+    private String longitude;
     private String time;
     private String id;
 
@@ -14,10 +15,11 @@ public class Organizer {
         this.id = id;
     }
 
-    public Organizer(String name, String time, String venue) {
+    public Organizer(String name, String time, String latitude, String longitude) {
         this.name = name;
-        this.venue = venue;
+        this.latitude = latitude;
         this.time = time;
+        this.longitude = longitude;
     }
 
     public Organizer(){
@@ -32,19 +34,30 @@ public class Organizer {
         this.name = name;
     }
 
-    public String getVenue() {
-        return venue;
-    }
-
-    public void setVenue(String venue) {
-        this.venue = venue;
-    }
 
     public String getTime() {
         return time;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
     public void setTime(String time) {
         this.time = time;
     }
+
+
 }

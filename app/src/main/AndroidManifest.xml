@@ -29,22 +29,14 @@
 
         <activity
             android:name=".Map"
-            android:exported="true"
-            android:label="@string/title_activity_map" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:label="@string/title_activity_map" />
         <activity
             android:name=".AddBloodRequest"
             android:exported="false" />
         <activity
             android:name=".BloodRequestActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".Home"
             android:exported="false" />
@@ -65,7 +57,7 @@
             android:exported="false" />
         <activity
             android:name=".Donors"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Landing"
             android:exported="false"

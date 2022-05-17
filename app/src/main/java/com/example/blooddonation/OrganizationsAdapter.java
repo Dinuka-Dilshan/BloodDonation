@@ -25,7 +25,7 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
 
     private List<Organizer> organizers;
     static EditText name;
-    static EditText venue;
+    static TextView venue;
     static EditText time;
 
 

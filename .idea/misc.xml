@@ -3,13 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_blood_info.xml" value="0.1675929884566054" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_donors.xml" value="0.18541666666666667" />
-        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_landing.xml" value="0.19947916666666668" />
-        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_my_profile.xml" value="0.20416666666666666" />
-        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_organizations.xml" value="0.20416666666666666" />
+        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_sign_in.xml" value="0.17777777777777778" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/activity_sign_in_form.xml" value="0.17777777777777778" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/app_bar_landing.xml" value="0.19947916666666668" />
@@ -18,7 +14,6 @@
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.19947916666666668" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/nav_header_landing.xml" value="0.19947916666666668" />
         <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/single_item.xml" value="0.1984375" />
-        <entry key="..\:/SoftwareProjects/BloodDonationApp/app/src/main/res/layout/single_organization.xml" value="0.25" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_sign_in_form.xml" value="0.25416666666666665" />
@@ -26,6 +21,7 @@
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_blood_request.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_donors.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_my_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_organizations.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_sign_in_form.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/blood_request_item.xml" value="0.25416666666666665" />
