@@ -10,8 +10,11 @@
         android:theme="@style/Theme.BloodDonation"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddBloodRequest"
+            android:exported="false" />
+        <activity
             android:name=".BloodRequestActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".Donors"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Landing"
             android:exported="false"
@@ -46,9 +49,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

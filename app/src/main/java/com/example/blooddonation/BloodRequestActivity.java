@@ -1,10 +1,20 @@
 package com.example.blooddonation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +25,7 @@ public class BloodRequestActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     BloodRequestCustomAdapter adapter;
     List<BloodRequest> requests = new ArrayList<BloodRequest>();
+    FloatingActionButton  btn;
 
 
     @Override
@@ -22,24 +33,38 @@ public class BloodRequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blood_request);
 
-        BloodRequest request = new BloodRequest("I need O+ Blood dssfsfsdf ", "Kamal", "0702629599", "Galle");
-        BloodRequest request1 = new BloodRequest("I need O+ Blood fg sdgsgfdsfgsdfs dfsfdsfdsf", "Kamal", "0702629599", "Galle");
-        BloodRequest request2 = new BloodRequest("I need O+ Blood", "Kamal", "0702629599", "Galle");
-        BloodRequest request3 = new BloodRequest("I need O+ Blood", "Kamal", "0702629599", "Galle");
-        BloodRequest request4 = new BloodRequest("I need O+ Blood", "Kamal", "0702629599", "Galle");
-
-        requests.add(request);
-        requests.add(request1);
-        requests.add(request2);
-        requests.add(request3);
-        requests.add(request4);
-
+        btn = findViewById(R.id.floatingActionButton);
 
         recyclerView = findViewById(R.id.recycler_view_blood_request);
         layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new BloodRequestCustomAdapter(requests);
-        recyclerView.setAdapter(adapter);
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dc2ed-default-rtdb.asia-southeast1.firebasedatabase.app");
+        DatabaseReference databaseReference = db.getReference("BloodRequest");
+
+        databaseReference.orderByChild("description").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    BloodRequest req = data.getValue(BloodRequest.class);
+                    requests.add(req);
+                }
+                adapter = new BloodRequestCustomAdapter(requests);
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+
+
+
+
+        btn.setOnClickListener(v->{
+            startActivity(new Intent(getApplicationContext(),AddBloodRequest.class));
+        });
 
     }
 }
