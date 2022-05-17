@@ -43,51 +43,51 @@
         android:layout_marginTop="80dp"
         android:src="@drawable/logo" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_donor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/home_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:backgroundTint="@color/primary"
-        android:paddingHorizontal="100dp"
-        android:paddingVertical="20dp"
-        android:text="DONOR"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:cornerRadius="0dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_donor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/home_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="@color/primary"
+            android:paddingHorizontal="100dp"
+            android:paddingVertical="20dp"
+            android:text="DONOR"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:cornerRadius="0dp" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_blood_req"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_donor"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/primary"
-        android:paddingHorizontal="55dp"
-        android:paddingVertical="20dp"
-        android:text="BLOOD REQUEST"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:cornerRadius="0dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_blood_req"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_donor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/primary"
+            android:paddingHorizontal="55dp"
+            android:paddingVertical="20dp"
+            android:text="BLOOD REQUEST"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:cornerRadius="0dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_organization"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_blood_req"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/primary"
-        android:paddingHorizontal="60dp"
-        android:paddingVertical="20dp"
-        android:text="ORGANIZATION"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:cornerRadius="0dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_organization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_blood_req"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/primary"
+            android:paddingHorizontal="60dp"
+            android:paddingVertical="20dp"
+            android:text="ORGANIZATION"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:cornerRadius="0dp" />
     </RelativeLayout>
 
 </ScrollView>

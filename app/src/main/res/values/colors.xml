@@ -8,4 +8,5 @@
     <color name="card_color">#DDFEDE</color>
     <color name="text_light">#7A7878</color>
     <color name="text_link">#0047FF</color>
+    <color name="drawer_background">#81C7C3</color>
 </resources>
