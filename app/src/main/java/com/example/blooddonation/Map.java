@@ -3,6 +3,7 @@ package com.example.blooddonation;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -22,6 +23,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapBinding binding;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +53,11 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).draggable(true).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng sl = new LatLng(6.9271, 79.8612);
+        mMap.addMarker(new MarkerOptions().position(sl).draggable(true).title("Press And Hold to move the marker"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sl));
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
 
         googleMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
@@ -71,7 +76,18 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                 LatLng latLng = marker.getPosition();
 
                 try {
-                    Toast.makeText(Map.this, "Lat: "+latLng.latitude, Toast.LENGTH_SHORT).show();
+
+
+
+                    Bundle extras = getIntent().getExtras();
+                    Intent i = new Intent(getApplicationContext(),Organizations.class);
+                    i.putExtra("latitude",Double.toString(latLng.latitude));
+                    i.putExtra("longitude",Double.toString(latLng.longitude));
+                    i.putExtra("name",extras.getString("name"));
+                    i.putExtra("time",extras.getString("time"));
+                    i.putExtra("id",extras.getString("id"));
+                    startActivity(i);
+
                 }catch(Exception e)
                 {
 
