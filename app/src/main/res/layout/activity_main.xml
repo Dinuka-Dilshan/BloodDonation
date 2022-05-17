@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
 <!--    xmlns:tools="http://schemas.android.com/tools"-->
 <!--    android:id="@+id/drawer_layout"-->
@@ -23,13 +22,17 @@
 <!--        app:headerLayout="@layout/nav_header_landing"-->
 <!--        app:menu="@menu/activity_main_drawer" />-->
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
 
         <ImageView
@@ -64,20 +67,20 @@
             android:textFontWeight="200"
             android:textSize="20dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sign_in_to"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/primary"
-        android:paddingHorizontal="60dp"
-        android:paddingVertical="20dp"
-        android:text="SIGN IN"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:cornerRadius="50dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sign_in_to"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/primary"
+            android:paddingHorizontal="60dp"
+            android:paddingVertical="20dp"
+            android:text="SIGN IN"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:cornerRadius="50dp" />
 
         <TextView
             android:id="@+id/or"
@@ -105,6 +108,5 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             app:cornerRadius="50dp" />
-
     </RelativeLayout>
-<!--</androidx.drawerlayout.widget.DrawerLayout>-->
+</ScrollView><!--</androidx.drawerlayout.widget.DrawerLayout>-->
