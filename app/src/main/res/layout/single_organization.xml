@@ -2,21 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:background="@color/card_color"
         android:padding="10dp"
-        android:background="@color/card_color">
+        android:layout_margin="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
             <LinearLayout
@@ -50,20 +49,23 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:textSize="26dp"
                             android:text="2022-12-15"
-                            android:textColor="@color/text_light"/>
+                            android:textColor="@color/text_light"
+                            android:textSize="26dp" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:textSize="26dp"
                             android:text="Venue ->"
                             android:textColor="@color/text_link"
+                            android:textSize="26dp"
+
                             />
 
                     </LinearLayout>
@@ -71,8 +73,14 @@
                     <LinearLayout
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/index" />
+
 
                     </LinearLayout>
                 </LinearLayout>
