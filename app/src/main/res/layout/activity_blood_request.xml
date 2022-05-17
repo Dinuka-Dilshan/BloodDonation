@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BloodRequestActivity"
+    android:orientation="vertical"
+    android:background="#E8F4F4">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_weight="1"
+       android:layout_height="0dp"
+       android:orientation="vertical"
+       >
+
+       <TextView
+           android:id="@+id/dhajkh"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="10dp"
+           android:text="Blood Requests"
+           android:textAlignment="center"
+           android:textColor="#050505"
+           android:textSize="30dp" />
+
+
+
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_blood_request"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_baseline_add_circle_24" />
+    </LinearLayout>
+
+</LinearLayout>

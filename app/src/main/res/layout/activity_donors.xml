@@ -23,6 +23,7 @@
             tools:layout_editor_absoluteX="181dp"
             tools:layout_editor_absoluteY="21dp" />
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="410dp"
@@ -31,3 +32,4 @@
             android:layout_marginHorizontal="15dp" />
     </RelativeLayout>
 </ScrollView>
+
