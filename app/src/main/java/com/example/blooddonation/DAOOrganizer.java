@@ -25,4 +25,10 @@ public class DAOOrganizer {
 
     }
 
+    public DatabaseReference getRef() {
+
+        return databaseReference;
+
+    }
+
 }

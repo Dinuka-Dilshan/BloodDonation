@@ -4,8 +4,17 @@ public class Organizer {
     private String name;
     private String venue;
     private String time;
+    private String id;
 
-    public Organizer(String name,  String time,String venue) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Organizer(String name, String time, String venue) {
         this.name = name;
         this.venue = venue;
         this.time = time;

@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -24,6 +26,9 @@ public class Organizations extends AppCompatActivity {
     EditText name;
     EditText venue;
     EditText time;
+    public static String updateId;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +45,14 @@ public class Organizations extends AppCompatActivity {
         OrganizationsAdapter.venue = venue;
         OrganizationsAdapter.time = time;
 
+        //fetching data and feed adapter
         DAOOrganizer DAOOrg = new DAOOrganizer();
         DAOOrg.getAllOrganizers().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()) {
                     Organizer organizer = data.getValue(Organizer.class);
+                    organizer.setId(data.getKey());
                     organizers.add(organizer);
                 }
                 adapter = new OrganizationsAdapter(organizers);
@@ -59,6 +66,7 @@ public class Organizations extends AppCompatActivity {
 
 
 
+        //add org details
         DAOOrganizer org = new DAOOrganizer();
 
         findViewById(R.id.org_add).setOnClickListener(v->{
@@ -72,5 +80,32 @@ public class Organizations extends AppCompatActivity {
             });
         });
 
+
+        //update organization
+        findViewById(R.id.org_update).setOnClickListener(v->{
+            DatabaseReference ref = new DAOOrganizer().getRef();
+            Query pendingTasks = ref.orderByKey().equalTo(updateId);
+            pendingTasks.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot childNodes: snapshot.getChildren()) {
+                        childNodes.getRef().child("name").setValue(name.getText().toString());
+                        childNodes.getRef().child("time").setValue(time.getText().toString());
+                    }
+                    Toast.makeText(Organizations.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+        });
+
+
     }
+
 }

@@ -21,16 +21,16 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
-public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdapter.ViewHolder>  {
+public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdapter.ViewHolder> {
 
     private List<Organizer> organizers;
     static EditText name;
     static EditText venue;
     static EditText time;
 
+
     public OrganizationsAdapter(List<Organizer> organizers) {
         this.organizers = organizers;
-        this.name = name;
     }
 
 
@@ -45,7 +45,9 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.getName().setText(organizers.get(position).getName());
         holder.getTime().setText(organizers.get(position).getTime());
+        holder.setId(organizers.get(position).getId());
     }
+
 
     @Override
     public int getItemCount() {
@@ -53,8 +55,10 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private  TextView name;
-        private  TextView time;
+        private TextView name;
+        private TextView time;
+
+        private String id;
 
         public ViewHolder(View v) {
             super(v);
@@ -65,6 +69,7 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
                     OrganizationsAdapter.name.setText(getName().getText().toString());
                     OrganizationsAdapter.time.setText(getTime().getText().toString());
                     OrganizationsAdapter.venue.setText("Select location");
+                    Organizations.updateId = id;
                 }
             });
 
@@ -76,6 +81,9 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
             return name;
         }
 
+        public void setId(String id) {
+            this.id = id;
+        }
 
         public TextView getTime() {
             return time;
