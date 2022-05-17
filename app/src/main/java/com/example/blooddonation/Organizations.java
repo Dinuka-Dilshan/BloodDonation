@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,10 +26,11 @@ public class Organizations extends AppCompatActivity {
     OrganizationsAdapter adapter;
     List<Organizer> organizers = new ArrayList<Organizer>();
     EditText name;
-    EditText venue;
+    TextView venue;
     EditText time;
     public static String updateId;
-
+    String latitude = "";
+    String longitude = "";
 
 
     @Override
@@ -44,6 +47,26 @@ public class Organizations extends AppCompatActivity {
         OrganizationsAdapter.name = name;
         OrganizationsAdapter.venue = venue;
         OrganizationsAdapter.time = time;
+
+
+
+        //set data from map
+
+        Intent intent = getIntent();
+        if(intent.hasExtra("name")){
+
+            Bundle extras = intent.getExtras();
+
+            name.setText(extras.getString("name"));
+            time.setText(extras.getString("time"));
+            updateId = extras.getString("id");
+            latitude = extras.getString("latitude");
+            longitude = extras.getString("longitude");
+            venue.setText(latitude+ " " + longitude);
+
+        }
+
+
 
         //fetching data and feed adapter
         DAOOrganizer DAOOrg = new DAOOrganizer();
@@ -70,10 +93,12 @@ public class Organizations extends AppCompatActivity {
         DAOOrganizer org = new DAOOrganizer();
 
         findViewById(R.id.org_add).setOnClickListener(v->{
-            Organizer organizer = new Organizer(name.getText().toString(),time.getText().toString(),venue.getText().toString());
+            Organizer organizer = new Organizer(name.getText().toString(),time.getText().toString(),latitude,longitude);
             org.add(organizer).addOnSuccessListener(suc ->
             {
                 Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(getIntent());
             }).addOnFailureListener(er ->
             {
 
@@ -103,6 +128,15 @@ public class Organizations extends AppCompatActivity {
                 }
             });
 
+        });
+
+        venue.setOnClickListener(v->{
+            Intent i = new  Intent(getApplicationContext(),Map.class);
+            i.putExtra("name",name.getText().toString().trim());
+            i.putExtra("time",time.getText().toString().trim());
+            i.putExtra("id",updateId);
+
+            startActivity(i);
         });
 
 
