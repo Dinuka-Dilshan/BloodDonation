@@ -63,6 +63,8 @@ public class OrganizationsAdapter extends RecyclerView.Adapter<OrganizationsAdap
                 @Override
                 public void onClick(View v) {
                     OrganizationsAdapter.name.setText(getName().getText().toString());
+                    OrganizationsAdapter.time.setText(getTime().getText().toString());
+                    OrganizationsAdapter.venue.setText("Select location");
                 }
             });
 

@@ -5,40 +5,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-public class DAOUser {
+public class DAOOrganizer {
     private DatabaseReference databaseReference;
 
 
-    public DAOUser() {
+    public DAOOrganizer() {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dc2ed-default-rtdb.asia-southeast1.firebasedatabase.app");
-        databaseReference = db.getReference("User");
+        databaseReference = db.getReference("Organizer");
     }
 
-    public Task<Void> register(User user) {
-
-        return databaseReference.push().setValue(user);
-
-    }
-
-    public Query checkAvailableUser(String userName) {
-
-        return databaseReference.orderByChild("userName").equalTo(userName);
-
-    }
     public Task<Void> add(Organizer org)
     {
         return databaseReference.push().setValue(org);
     }
 
-    public Query getAllDonors() {
+    public Query getAllOrganizers() {
 
-        return databaseReference.orderByChild("category");
+        return databaseReference.orderByChild("");
 
-    }
-
-
-    public DatabaseReference getRef(){
-        return  databaseReference;
     }
 
 }
