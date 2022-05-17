@@ -33,7 +33,6 @@ public class Organizations extends AppCompatActivity {
         venue = findViewById(R.id.organizations_venue);
         time = findViewById(R.id.organizations_time);
 
-        organizers.add(new Organizer("DSE Blood Donator","3.43422,3.4323","2022/12/12"));
         recyclerView = findViewById(R.id.org_recycler);
         layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
