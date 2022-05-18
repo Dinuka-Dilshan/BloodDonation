@@ -10,7 +10,7 @@ public class DAOUser {
 
 
     public DAOUser() {
-        FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dc2ed-default-rtdb.asia-southeast1.firebasedatabase.app");
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dfcf9-default-rtdb.asia-southeast1.firebasedatabase.app");
         databaseReference = db.getReference("User");
     }
 
