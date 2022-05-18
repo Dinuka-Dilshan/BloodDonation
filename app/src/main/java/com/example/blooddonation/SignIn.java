@@ -19,6 +19,8 @@ public class SignIn extends AppCompatActivity {
     EditText userName;
     Button btn;
 
+    public static String usernameStatic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +41,13 @@ public class SignIn extends AppCompatActivity {
                     for(DataSnapshot ds : snapshot.getChildren()){
                         if(ds.child("password").getValue().toString().equals(getStringValue(password)) && ds.child("userName").getValue().toString().equals(getStringValue(userName))){
                             isValid = true;
+                            usernameStatic = ds.child("userName").getValue().toString();
                             break;
                         }
                     }
 
                     if(isValid){
+
                         Intent i = new Intent(getApplicationContext(),Home.class);
                         i.putExtra("userName",getStringValue(userName));
                         startActivity(i);
