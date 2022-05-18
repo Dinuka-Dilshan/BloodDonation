@@ -18,6 +18,7 @@
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/AndroidStudioProjects/BloodDonation/app/src/main/res/layout/activity_sign_in_form.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_add_blood_request.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_blood_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_blood_request.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_donors.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_my_profile.xml" value="0.25416666666666665" />
@@ -25,8 +26,10 @@
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/activity_sign_in_form.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/blood_request_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/fragment_gallery.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/single_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/layout/single_organization.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dinuka Dilshan/Desktop/blood donation/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
