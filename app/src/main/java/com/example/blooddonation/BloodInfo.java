@@ -27,7 +27,7 @@ public class BloodInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blood_info);
 
-        });
+
 
         btn_info = findViewById(R.id.btn_info);
         btnGetStarted = findViewById(R.id.btnGetStarted);
