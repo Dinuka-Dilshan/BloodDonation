@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //                new DialogFragmen().show(getSupportFragmentManager(),"dfd");
                 Intent i = new Intent(getApplicationContext(),SignIn.class);
                 startActivity(i);
+                finish();
             }
 
         });

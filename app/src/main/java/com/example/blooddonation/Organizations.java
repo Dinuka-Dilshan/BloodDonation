@@ -63,6 +63,7 @@ public class Organizations extends AppCompatActivity {
 
                     case R.id.nav_logout:
                         startActivity(new Intent(getApplicationContext(), BloodInfo.class));
+                        finish();
                         break;
 
                     case R.id.nav_myProfile:
@@ -145,13 +146,12 @@ public class Organizations extends AppCompatActivity {
                 org.add(organizer).addOnSuccessListener(suc ->
                 {
                     Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-                    finish();
                     startActivity(getIntent());
+                    finish();
                 }).addOnFailureListener(er ->
                 {
                     Toast.makeText(this, "Could not perform the action!", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
+
                 });
             }
 
@@ -185,15 +185,13 @@ public class Organizations extends AppCompatActivity {
 
                         }
                         Toast.makeText(Organizations.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
-                        finish();
                         startActivity(getIntent());
+                        finish();
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         Toast.makeText(Organizations.this, "Could not perform the action!", Toast.LENGTH_SHORT).show();
-                        finish();
-                        startActivity(getIntent());
 
                     }
                 });
