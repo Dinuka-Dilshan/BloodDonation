@@ -54,8 +54,10 @@ public class AddBloodRequest extends AppCompatActivity {
                 databaseReference.push().setValue(req).addOnSuccessListener(suc->{
                     Toast.makeText(this, "Request Added", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), BloodRequestActivity.class));
+                    finish();
                 }).addOnFailureListener(vv->{
                     Toast.makeText(this, "Failed To add !", Toast.LENGTH_SHORT).show();
+                    finish();
                 });
 
 

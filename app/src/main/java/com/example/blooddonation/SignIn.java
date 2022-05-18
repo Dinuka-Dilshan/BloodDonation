@@ -51,6 +51,7 @@ public class SignIn extends AppCompatActivity {
                         Intent i = new Intent(getApplicationContext(),Home.class);
                         i.putExtra("userName",getStringValue(userName));
                         startActivity(i);
+                        finish();
                     }else {
                         Toast.makeText(SignIn.this, "Username or password incorrect !", Toast.LENGTH_SHORT).show();
                     }
