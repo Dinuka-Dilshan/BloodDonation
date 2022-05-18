@@ -48,7 +48,7 @@ public class AddBloodRequest extends AppCompatActivity {
 
                 BloodRequest req = new BloodRequest(getStringValue(description), getStringValue(name), getStringValue(phone), getStringValue(town));
 
-                FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dc2ed-default-rtdb.asia-southeast1.firebasedatabase.app");
+                FirebaseDatabase db = FirebaseDatabase.getInstance("https://blooddonation-dfcf9-default-rtdb.asia-southeast1.firebasedatabase.app");
                 DatabaseReference databaseReference = db.getReference("BloodRequest");
 
                 databaseReference.push().setValue(req).addOnSuccessListener(suc->{

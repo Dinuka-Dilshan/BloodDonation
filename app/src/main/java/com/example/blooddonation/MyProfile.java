@@ -2,10 +2,13 @@ package com.example.blooddonation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +45,39 @@ public class MyProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
+        NavigationView nav = findViewById(R.id.nav_view_my_profile);
+        nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(), Home.class));
+                        break;
+
+                    case R.id.nav_bloodRequest:
+                        startActivity(new Intent(getApplicationContext(), BloodRequestActivity.class));
+                        break;
+
+                    case R.id.nav_logout:
+                        startActivity(new Intent(getApplicationContext(), BloodInfo.class));
+                        break;
+
+                    case R.id.nav_myProfile:
+                        startActivity(new Intent(getApplicationContext(), MyProfile.class));
+                        break;
+                    case R.id.nav_organization:
+                        startActivity(new Intent(getApplicationContext(), Organizations.class));
+                        break;
+                }
+                DrawerLayout drawer = findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+                return false;
+            }
+
+
+        });
+
         btn = findViewById(R.id.button);
         phone = findViewById(R.id.my_profile_contact_no);
         name = findViewById(R.id.my_profile_name);
@@ -50,8 +87,8 @@ public class MyProfile extends AppCompatActivity {
         userNameEditText = findViewById(R.id.my_profile_user_name);
         img = findViewById(R.id.my_prifile_image);
 
-        Intent i = getIntent();
-        String userName = i.getStringExtra("userName");
+//        Intent i = getIntent();
+        String userName = SignIn.usernameStatic;
 
         storageRef = FirebaseStorage.getInstance().getReference().child("images/"+userName);
 

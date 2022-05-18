@@ -10,6 +10,11 @@
         android:name="com.example.blooddonation.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
+<!--    <activity-->
+<!--        android:id="@+id/nav_myProfile"-->
+<!--        android:name="com.example.blooddonation.MyProfile"-->
+<!--        android:label="@string/menu_home"-->
+<!--        tools:layout="@layout/activity_my_profile" />-->
 
     <fragment
         android:id="@+id/nav_gallery"
