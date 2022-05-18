@@ -133,40 +133,73 @@ public class Organizations extends AppCompatActivity {
         DAOOrganizer org = new DAOOrganizer();
 
         findViewById(R.id.org_add).setOnClickListener(v->{
-            Organizer organizer = new Organizer(name.getText().toString(),time.getText().toString(),latitude,longitude);
-            org.add(organizer).addOnSuccessListener(suc ->
-            {
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-                finish();
-                startActivity(getIntent());
-            }).addOnFailureListener(er ->
-            {
 
-            });
+            if (getStringValue(name).length() == 0) {
+                Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+            } else if (time.getText().toString().trim().length() == 0) {
+                Toast.makeText(this, "Time cannot be empty", Toast.LENGTH_SHORT).show();
+            }  else if (latitude.trim().length() == 0) {
+                Toast.makeText(this, "Please select the location", Toast.LENGTH_SHORT).show();
+            }else {
+                Organizer organizer = new Organizer(name.getText().toString(),time.getText().toString(),latitude,longitude);
+                org.add(organizer).addOnSuccessListener(suc ->
+                {
+                    Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }).addOnFailureListener(er ->
+                {
+                    Toast.makeText(this, "Could not perform the action!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                });
+            }
+
+
         });
 
 
         //update organization
         findViewById(R.id.org_update).setOnClickListener(v->{
-            DatabaseReference ref = new DAOOrganizer().getRef();
-            Query pendingTasks = ref.orderByKey().equalTo(updateId);
-            pendingTasks.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for (DataSnapshot childNodes: snapshot.getChildren()) {
-                        childNodes.getRef().child("name").setValue(name.getText().toString());
-                        childNodes.getRef().child("time").setValue(time.getText().toString());
+
+            if (getStringValue(name).length() == 0) {
+                Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+            } else if (time.getText().toString().trim().length() == 0) {
+                Toast.makeText(this, "Time cannot be empty", Toast.LENGTH_SHORT).show();
+            }  else if (time.getText().toString().trim().length() == 0) {
+                Toast.makeText(this, "Time cannot be empty", Toast.LENGTH_SHORT).show();
+            } else if (latitude.trim().length() == 0) {
+                Toast.makeText(this, "Please select the location", Toast.LENGTH_SHORT).show();
+            }else {
+
+                DatabaseReference ref = new DAOOrganizer().getRef();
+                Query pendingTasks = ref.orderByKey().equalTo(updateId);
+                pendingTasks.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot childNodes: snapshot.getChildren()) {
+                            childNodes.getRef().child("name").setValue(name.getText().toString());
+                            childNodes.getRef().child("time").setValue(time.getText().toString());
+                            childNodes.getRef().child("latitude").setValue(latitude);
+                            childNodes.getRef().child("longitude").setValue(longitude);
+
+                        }
+                        Toast.makeText(Organizations.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+                        finish();
+                        startActivity(getIntent());
                     }
-                    Toast.makeText(Organizations.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
-                }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(Organizations.this, "Could not perform the action!", Toast.LENGTH_SHORT).show();
+                        finish();
+                        startActivity(getIntent());
 
-                }
-            });
+                    }
+                });
+
+            }
+
 
         });
 
@@ -181,5 +214,10 @@ public class Organizations extends AppCompatActivity {
 
 
     }
+
+    private String getStringValue(EditText txt) {
+        return txt.getText().toString().trim();
+    }
+
 
 }
