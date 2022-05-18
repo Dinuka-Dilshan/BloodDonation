@@ -53,10 +53,6 @@
       
         <activity
             android:name=".BloodInfo"
-            android:exported="false" />
-      
-        <activity
-            android:name=".Organizations"
             android:exported="true" >
                       <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,6 +66,11 @@
             android:exported="false">
         </activity>
       
+        <activity
+            android:name=".Organizations"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".MyProfile"
             android:exported="false" />
