@@ -44,7 +44,7 @@ public class SignIn extends AppCompatActivity {
                     }
 
                     if(isValid){
-                        Intent i = new Intent(getApplicationContext(),MyProfile.class);
+                        Intent i = new Intent(getApplicationContext(),Home.class);
                         i.putExtra("userName",getStringValue(userName));
                         startActivity(i);
                     }else {

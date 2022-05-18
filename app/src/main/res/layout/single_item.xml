@@ -23,12 +23,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
+                <pl.droidsonroids.gif.GifImageView
 
                     android:id="@+id/recycle_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/index" />
+                    android:src="@drawable/loader" />
 
             </LinearLayout>
 
@@ -45,27 +45,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
                     android:layout_marginTop="0dp"
-                    android:text="K.A.Perera" />
+                    android:text="K.A.Perera"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/recycle_contact_no"
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
                     android:layout_marginVertical="5dp"
-                    android:text="0713456742" />
+                    android:text="0713456742"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/recycle_address"
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
-                    android:text="53/2, Temple Road, Galle" />
+                    android:text="53/2, Temple Road, Galle"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/recycle_blood_group"
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
                     android:layout_marginVertical="0dp"
-                    android:text="A+" />
+                    android:text="A+"
+                    android:textColor="@color/black"/>
 
 
             </LinearLayout>

@@ -35,13 +35,13 @@
                 android:elevation="10dp"
                 app:cardCornerRadius="250dp">
 
-                <ImageView
+                <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/my_prifile_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/my_prifile_topic"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/index" />
+                    android:src="@drawable/loader" />
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>

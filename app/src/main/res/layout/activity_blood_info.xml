@@ -8,11 +8,13 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+
     <include
         android:id="@+id/app_bar_landing"
         layout="@layout/app_bar_landing"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
 
 
@@ -37,7 +39,7 @@
         android:src="@drawable/logo" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_donor"
+        android:id="@+id/btn_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/home_logo"
@@ -69,6 +71,7 @@
 </LinearLayout>
 
 </RelativeLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -77,4 +80,5 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_landing"
         app:menu="@menu/activity_main_drawer" />
+
     </androidx.drawerlayout.widget.DrawerLayout>
