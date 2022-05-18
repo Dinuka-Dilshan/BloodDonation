@@ -117,6 +117,7 @@ public class SignUpForm extends AppCompatActivity {
                             DAO.register(user).addOnSuccessListener(suc -> {
                                 Toast.makeText(getApplicationContext(), "Registered ! Sign In to login", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getApplicationContext(), SignIn.class));
+                                finish();
                             }).addOnFailureListener(er -> {
                                 Toast.makeText(SignUpForm.this, er.getMessage(), Toast.LENGTH_SHORT).show();
                             });
@@ -156,6 +157,7 @@ public class SignUpForm extends AppCompatActivity {
 
                         img.setImageURI(null);
                         Toast.makeText(getApplicationContext(), "Successfully Uploaded", Toast.LENGTH_SHORT).show();
+
 
 
                     }

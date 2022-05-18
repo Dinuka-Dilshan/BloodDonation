@@ -55,6 +55,7 @@ public class BloodRequestActivity extends AppCompatActivity {
 
                     case R.id.nav_logout:
                         startActivity(new Intent(getApplicationContext(), BloodInfo.class));
+                        finish();
                         break;
 
                     case R.id.nav_myProfile:
